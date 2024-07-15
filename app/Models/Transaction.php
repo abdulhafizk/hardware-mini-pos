@@ -13,4 +13,13 @@ class Transaction extends Model
      * fillable
      */
     protected $fillable = ['invoice', 'user_id', 'grand_total', 'cash', 'change'];
+
+    /**
+     * relation to users table
+     */
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
